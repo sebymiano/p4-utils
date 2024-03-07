@@ -510,7 +510,7 @@ function do_p4c {
 
     # Build p4c
     if [ "$DEBUG_FLAGS" = true ]; then
-        cmake .. -DCMAKE_BUILD_TYPE=DEBUG $*
+        cmake .. -DENABLE_EBPF=OFF -DENABLE_DPDK=OFF -DENABLE_P4TC=OFF -DENABLE_UBPF=OFF -DCMAKE_BUILD_TYPE=DEBUG $*
     else
         # Debug build
         cmake .. -DENABLE_EBPF=OFF -DENABLE_DPDK=OFF -DENABLE_P4TC=OFF -DENABLE_UBPF=OFF
